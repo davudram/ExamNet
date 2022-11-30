@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="ExamNet.ChaptersCardController"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ExamNet"
+             xmlns:convertors="clr-namespace:ExamNet.Convertor" xmlns:viewmodels="clr-namespace:ExamNet.ViewModels"
+             mc:Ignorable="d"
+             d:DataContext="{d:DesignInstance Type=viewmodels:ChaptersViewModel}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <convertors:Base64ImageConverter x:Key="ImageConvertor" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Image  Margin="5" Grid.RowSpan="2" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}"  Width="150"/>
+        <TextBlock TextWrapping="Wrap" FontSize="25" Margin="5" Grid.Row="2" Text="{Binding Name}"/>
+    </Grid>
+</UserControl>

@@ -3,10 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ExamNet"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ListBox Grid.Row="1" Background="Gray" FontFamily="Matura MT Script Capitals" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter}"  Margin="0,17,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightYellow" FontSize="15"  Text="{Binding Chapter_Name}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Height="50" Command="{Binding ShowCommand}" Margin="242,352,242,32"/>
     </Grid>
 </Window>

@@ -11,20 +11,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ExamNet
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Cards.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Cards : Window
     {
-        public MainWindow()
+
+        public Cards()
         {
             InitializeComponent();
-            DataContext = new ChaptersViewModel();
+            DataContext = new CharacterViewModel(); 
+        }
+
+        public Cards(int iD)
+        {
+            InitializeComponent();
+            DataContext = new CharacterViewModel(iD);
         }
     }
 }

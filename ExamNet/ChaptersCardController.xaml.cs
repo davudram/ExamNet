@@ -1,4 +1,4 @@
-﻿using ExamNet.ViewModels;
+﻿using ExamNet.Convertor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +17,13 @@ using System.Windows.Shapes;
 namespace ExamNet
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ChaptersCardController.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ChaptersCardController : UserControl
     {
-        public MainWindow()
+        public ChaptersCardController()
         {
             InitializeComponent();
-            DataContext = new ChaptersViewModel();
         }
     }
 }
