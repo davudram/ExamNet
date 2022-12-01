@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ExamNet"
         mc:Ignorable="d"
         Title="Cards" Height="450" Width="800">
-   <Window.Resources>
+    <Window.Resources>
         <DataTemplate x:Key="cardTemplate">
             <local:ChaptersCardController HorizontalAlignment="Left" VerticalAlignment="Top"/>
         </DataTemplate>
@@ -19,5 +19,6 @@
             ItemTemplate="{StaticResource cardTemplate}"
             ItemsPanel="{StaticResource cardPanelTemplate}">
         </ListBox>
+        <Button Margin="252,385,252,10" Command="{Binding ShowCommand}"/>
     </Grid>
 </Window>

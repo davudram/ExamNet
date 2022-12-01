@@ -51,7 +51,9 @@ namespace ExamNet.ViewModels
                 return;
 			Cards cards = new Cards(SelectedChapter.ID);
 			cards.ShowDialog();
-        }						
+        }		
+		
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 

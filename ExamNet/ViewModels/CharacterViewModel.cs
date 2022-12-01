@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -22,6 +23,19 @@ namespace ExamNet.ViewModels
             set { character = value; }
         }
 
+        private Character _selectedCharacter;
+
+        public Character SelectedCharacter
+        {
+            get { return _selectedCharacter; }
+            set
+            {
+                _selectedCharacter = value;
+                OnProperyChanged("SelectedCharacter");
+                ShowInformation();
+            }
+        }
+
         public CharacterViewModel()
         {
             character = new ObservableCollection<Character>(new WitcherModel().Characters);
@@ -30,6 +44,20 @@ namespace ExamNet.ViewModels
         public CharacterViewModel(int chapterID)
         {
             character = new ObservableCollection<Character>(new WitcherModel().Characters.Where(x => x.Chapter_ID == chapterID));
+        }
+
+        private RelayCommand _showCommand;
+
+        public RelayCommand ShowCommand
+        {
+            get { return _showCommand ?? (_showCommand = new RelayCommand(ShowInformation)); }
+        }
+
+
+        private void ShowInformation()
+        {
+            CardCharacter cardCharacter = new CardCharacter(SelectedCharacter);
+            cardCharacter.Show();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

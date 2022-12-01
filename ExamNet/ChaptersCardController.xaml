@@ -19,6 +19,6 @@
         </Grid.RowDefinitions>
 
         <Image  Margin="5" Grid.RowSpan="2" Source="{Binding Image_Url, Converter={StaticResource ImageConvertor}}"  Width="150"/>
-        <TextBlock TextWrapping="Wrap" FontSize="25" Margin="5" Grid.Row="2" Text="{Binding Name}"/>
+        <TextBlock FontFamily="Matura MT Script Capitals" TextWrapping="Wrap" FontSize="25" Margin="5" Grid.Row="2" Text="{Binding Name}"/>
     </Grid>
 </UserControl>

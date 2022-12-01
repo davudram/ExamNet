@@ -9,7 +9,7 @@
         <ListBox Grid.Row="1" Background="Gray" FontFamily="Matura MT Script Capitals" ItemsSource="{Binding Chapters}" SelectedItem="{Binding SelectedChapter}"  Margin="0,17,0,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightYellow" FontSize="15"  Text="{Binding Chapter_Name}"></TextBlock>
+                    <TextBlock Margin="10" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightYellow" FontSize="15"  Text="{Binding Chapter_Name}" FontFamily="Algerian"></TextBlock>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
